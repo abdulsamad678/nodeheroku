@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../model/user");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 router.post("/", async (req, res) => {
     try {  
@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
           email: req.body.email,
           password: req.body.password,
         });
-        const salt = await bcrypt.genSalt(10);
+        const salt = await bcryptjs.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
   
         await user.save();
