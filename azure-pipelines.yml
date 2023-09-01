@@ -25,7 +25,7 @@ steps:
 
 # Push Docker image to DockerHub
 - script: |
-    docker tag expressapi:latest abdulsamad001/expressapi:latest
+    docker tag expressapi:latest abdulsamad001/expressapi
     docker push abdulsamad001/expressapi:latest
   displayName: 'abdulsamad001'
 
