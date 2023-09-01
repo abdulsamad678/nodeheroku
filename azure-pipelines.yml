@@ -21,7 +21,7 @@ steps:
 
 - script: |
     # Build Docker image
-    docker build -t expressapi:latest -f E:\projectsss\nodejs-heroku\Dockerfile .
+    docker build -t abdulsamad001/expressapi .
   displayName: 'Build Docker Image'
 
 - script: |
