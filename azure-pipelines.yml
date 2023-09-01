@@ -20,7 +20,7 @@ steps:
   displayName: 'npm install'
 
 - script: |
-     Dockerfile: '**/Dockerfile'
+     Dockerfile: '/Dockerfile'
     docker build -t abdulsamad001/expressapi .
   displayName: 'Build Docker Image'
 
