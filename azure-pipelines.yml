@@ -21,7 +21,7 @@ steps:
 
 - script: |
     # Build Docker image
-    docker build -t expressapi:latest -f /path/to/Dockerfile .
+    docker build -t expressapi:latest -f ./Dockerfile .
   displayName: 'Build Docker Image'
 
 - script: |
