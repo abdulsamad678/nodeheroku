@@ -19,18 +19,15 @@ steps:
     npm install
   displayName: 'npm install'
 
-- script: |
-     Dockerfile: '/Dockerfile'
-    docker build -t abdulsamad001/expressapi .
-  displayName: 'Build Docker Image'
+- steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-- script: |
-    # Log in to DockerHub or your container registry
-    docker login -u abdulsamad001 -p Hafizhabib123
-  displayName: 'Log in to DockerHub'
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.abdulsamad001 }} -p ${{ secrets.Hafizhabib123 }}
 
-- script: |
-    # Push Docker image to DockerHub or your container registry
-    docker tag expressapi:latest abdulsamad001/expressapi
-    docker push abdulsamad001/expressapi:latest
-  displayName: 'Push Docker Image to DockerHub'
+    - name: Build Docker image
+      run: docker build -t abdulsamad001/expressapi:latest .
+
+    - name: Push Docker image
+      run: docker push yabdulsamad001/expressapi:latest
