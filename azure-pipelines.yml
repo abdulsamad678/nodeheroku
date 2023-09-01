@@ -20,7 +20,7 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    # Build Docker image
+    E:\projectsss\nodejs-heroku\Dockerfile
     docker build -t abdulsamad001/expressapi .
   displayName: 'Build Docker Image'
 
