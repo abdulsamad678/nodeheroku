@@ -18,16 +18,3 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
-
-- steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Login to Docker Hub
-      run: docker login -u ${{ secrets.abdulsamad001 }} -p ${{ secrets.Hafizhabib123 }}
-
-    - name: Build Docker image
-      run: docker build -t abdulsamad001/expressapi:latest .
-
-    - name: Push Docker image
-      run: docker push yabdulsamad001/expressapi:latest
