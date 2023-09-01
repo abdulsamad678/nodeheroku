@@ -18,3 +18,18 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
+# Log in to DockerHub
+- script: |
+    docker login -u abdulsamad001 -p Hafizhabib123
+  displayName: 'abdulsamad001'
+
+# Push Docker image to DockerHub
+- script: |
+    docker tag expressapi:latest abdulsamad001/expressapi:latest
+    docker push abdulsamad001/expressapi:latest
+  displayName: 'abdulsamad001'
+
+# Update Kubernetes deployment to use the new image
+- script: |
+    kubectl set image deployment/expressapi-deployment expressapi=abdulsamad001/expressapi:latest
+  displayName: 'abdulsamad001'
