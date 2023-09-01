@@ -18,3 +18,19 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
+
+- script: |
+    # Build Docker image
+    docker build -t expressapi:latest .
+  displayName: 'Build Docker Image'
+
+- script: |
+    # Log in to DockerHub or your container registry
+    docker login -u abdulsamad001 -p Hafizhabib123
+  displayName: 'Log in to DockerHub'
+
+- script: |
+    # Push Docker image to DockerHub or your container registry
+    docker tag expressapi:latest abdulsamad001/expressapi
+    docker push abdulsamad001/expressapi:latest
+  displayName: 'Push Docker Image to DockerHub'
