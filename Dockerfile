@@ -7,7 +7,6 @@ WORKDIR /app
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 # Upgrade npm
-RUN npm install -g npm@latest
 # Install project dependencies, including pm2
 RUN npm install
 
