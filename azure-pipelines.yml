@@ -15,23 +15,8 @@ steps:
     versionSpec: '10.x'
     displayName: 'Install Node.js'
 
-   
-      run: docker build -t abdulsamad001/expressapi:latest .
-      
-
-      run: docker login -u abdulsamad001 -p Hafizhabib123
-      run: |
-          docker build -t abdulsamad001/expressapi:latest .
-
-      run: docker push abdulsamad001/expressapi:latest
-
-        run: |
-          kubectl apply -f azure-manifest.yaml
-        
-
 - script: |
     npm install
   displayName: 'npm install'
 
   
-      
