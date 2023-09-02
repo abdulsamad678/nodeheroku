@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: express-api
+  template:
+    metadata:
+      labels:
+        app: express-api
+    spec:
+      containers:
+        - name: minikube
+          image: abdulsamad001/expressapi
+          ports:
+            - containerPort: 5000
+          
