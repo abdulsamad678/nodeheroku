@@ -14,7 +14,25 @@ steps:
   inputs:
     versionSpec: '10.x'
     displayName: 'Install Node.js'
+    name: Checkout code
+        uses: actions/checkout@v2
+
+     name: Login to Docker Hub
+        run: docker login -u ${{ secrets.abdulsamad001 }} -p ${{ secrets.Hafizhabib123 }}
+
+       name: Build and push Docker image
+        run: |
+          docker build -t abdulsamad001/expressapi:latest .
+          docker push abdulsamad001/expressapi:latest
+
+      name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f azure-manifest.yaml
+        
 
 - script: |
     npm install
   displayName: 'npm install'
+
+  
+      
