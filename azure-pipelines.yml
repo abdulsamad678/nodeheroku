@@ -22,7 +22,8 @@ steps:
       
     - name: Log in to DockerHub
       run: docker login -u abdulsamad001 -p Hafizhabib123
-
+      run: |
+          docker build -t abdulsamad001/expressapi:latest .
     - name: Push Docker image to DockerHub
       run: docker push abdulsamad001/expressapi:latest
 
