@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8080
 
 # Start the Express API using local pm2 binary
-CMD ["pm2-runtime", "npm", "--", "start"]
+CMD ["npm", "start"]
