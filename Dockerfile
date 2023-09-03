@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Add execute permissions to nodemon
-RUN chmod +x ./node_modules/.bin/nodemon
+RUN find ./node_modules -type f -exec chmod +x {} \
 # Copy the rest of the application code to the container
 COPY . .
 
