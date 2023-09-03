@@ -10,6 +10,8 @@ COPY package*.json ./
 # Install project dependencies, including pm2
 RUN npm install
 
+# Add execute permissions to nodemon
+RUN chmod +x ./node_modules/.bin/nodemon
 # Copy the rest of the application code to the container
 COPY . .
 
