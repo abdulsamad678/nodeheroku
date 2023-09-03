@@ -3,15 +3,10 @@ FROM node:16.20.2
 
 # Set the working directory inside the container
 WORKDIR /app
-
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
-# Upgrade npm
 # Install project dependencies, including pm2
-RUN npm install
-
-# Add execute permissions to nodemon
-RUN find ./node_modules -type f -exec chmod +x {} \
+RUN npm install nodemon - g
 # Copy the rest of the application code to the container
 COPY . .
 
